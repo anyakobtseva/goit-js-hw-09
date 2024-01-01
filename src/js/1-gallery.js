@@ -91,12 +91,12 @@ function createGalleryItem({ preview, description, original }) {
 images.map(image => allImagesEl.push(createGalleryItem(image)));
 gallery.append(...allImagesEl);
 
-const ligthbox = new Simplelightbox('.gallery a', {
+new Simplelightbox('.gallery a', {
   captionDelay: 250,
   overlayOpacity: 1,
   heightRatio: 0.9,
   widthRatio: 1,
   className: 'lb',
-  navText:	['<img src="/../img/larrow.svg"/>','<img src="/../img/rarrow.svg"/>'],
-  closeText: '<img src="/../img/closeBtn.svg"/>'
+  navText:	['<img src="/img/larrow.svg"/>','<img src="/img/rarrow.svg"/>'],
+  closeText: '<img src="/img/closeBtn.svg"/>'
 })
