@@ -1,8 +1,8 @@
 import Simplelightbox from 'simplelightbox'
 import "simplelightbox/dist/simple-lightbox.min.css";
-import larrow from '../img/larrow.svg';
-import rarrow from '../img/rarrow.svg';
-import closeBtn from '../img/closeBtn.svg';
+import rarrow from '../../assets/rarrow.svg';
+import larrow from '../../assets/larrow.svg';
+import closeBtn from '../../assets/closeBtn.svg';
 
 const images = [
   {
@@ -100,6 +100,6 @@ new Simplelightbox('.gallery a', {
   heightRatio: 0.9,
   widthRatio: 1,
   className: 'lb',
-  navText:	[`<img src="${larrow}"/>`,`<img src="${rarrow}>`],
+  navText:	[`<img src="${larrow}"/>`,`<img src="${rarrow}"/>`],
   closeText: `<img src="${closeBtn}"/>`
 })
