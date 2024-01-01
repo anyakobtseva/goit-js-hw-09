@@ -97,6 +97,6 @@ const ligthbox = new Simplelightbox('.gallery a', {
   heightRatio: 0.9,
   widthRatio: 1,
   className: 'lb',
-  navText:	['<img src="/img/larrow.svg"/>','<img src="/img/rarrow.svg"/>'],
-  closeText: '<img src="/img/closeBtn.svg"/>'
+  navText:	['<img src="img/larrow.svg"/>','<img src="img/rarrow.svg"/>'],
+  closeText: '<img src="img/closeBtn.svg"/>'
 })
