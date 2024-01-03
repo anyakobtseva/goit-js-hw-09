@@ -85,7 +85,6 @@ function createGalleryItem({ preview, description, original }) {
   imEl.className = 'gallery-image';
   imEl.src = preview;
   imEl.alt = description;
-  imEl.title = description;
   imEl.dataset.source = original;
   linkEl.appendChild(imEl);
   return liEl;
@@ -98,6 +97,7 @@ new Simplelightbox('.gallery a', {
   captionDelay: 250,
   overlayOpacity: 1,
   heightRatio: 0.9,
+  captionsData: 'alt',
   widthRatio: 1,
   className: 'lb',
   navText:	[`<img src="${larrow}"/>`,`<img src="${rarrow}"/>`],

@@ -4,15 +4,14 @@ const messageArea = document.querySelector('.feedback-form textarea');
 const LOCAL_STORAGE_KEY = 'feedback-form-state';
 
 const storedObj = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? {};
-
 emailInput.value = storedObj['email'] ?? null;
 messageArea.value = storedObj['message'] ?? null;
 
 form.addEventListener('submit', event => {
     event.preventDefault();
+    console.log('Email: ', event.target.email.value.trim())
+    console.log('Message: ', event.target.message.value.trim())
     localStorage.removeItem(LOCAL_STORAGE_KEY)
-    console.log('Email: ', storedObj['email'])
-    console.log('Message: ', storedObj['message'])
     form.reset();
 })
 
