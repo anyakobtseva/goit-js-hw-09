@@ -4,23 +4,22 @@ const messageArea = document.querySelector('.feedback-form textarea');
 const LOCAL_STORAGE_KEY = 'feedback-form-state';
 
 const storedObj = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? {};
-emailInput.value = storedObj['email'] ?? null;
-messageArea.value = storedObj['message'] ?? null;
+emailInput.value = storedObj['email'] ?? '';
+messageArea.value = storedObj['message'] ?? '';
 
 form.addEventListener('submit', event => {
-    event.preventDefault();
-    console.log('Email: ', event.target.email.value.trim())
-    console.log('Message: ', event.target.message.value.trim())
-    localStorage.removeItem(LOCAL_STORAGE_KEY)
-    form.reset();
-})
+  event.preventDefault();
+  console.log(localStorage.getItem(LOCAL_STORAGE_KEY));
+  localStorage.removeItem(LOCAL_STORAGE_KEY);
+  form.reset();
+});
 
-emailInput.addEventListener('input', event => {
-    storedObj['email'] = event.currentTarget.value.trim();
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(storedObj))
-})
-
-messageArea.addEventListener('input', event => {
-    storedObj['message'] = event.currentTarget.value.trim()
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(storedObj))
-})
+form.addEventListener('input', event => {
+  localStorage.setItem(
+    LOCAL_STORAGE_KEY,
+    JSON.stringify({
+      email: emailInput.value.trim(),
+      message: messageArea.value.trim(),
+    })
+  );
+});

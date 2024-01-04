@@ -71,8 +71,6 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-const allImagesEl = [];
-// let modal;
 
 function createGalleryItem({ preview, description, original }) {
   const liEl = document.createElement('li');
@@ -90,8 +88,7 @@ function createGalleryItem({ preview, description, original }) {
   return liEl;
 }
 
-images.map(image => allImagesEl.push(createGalleryItem(image)));
-gallery.append(...allImagesEl);
+gallery.append(...images.map(image => createGalleryItem(image)));
 
 new Simplelightbox('.gallery a', {
   captionDelay: 250,
