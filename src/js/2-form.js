@@ -3,13 +3,21 @@ const emailInput = document.querySelector('.feedback-form input');
 const messageArea = document.querySelector('.feedback-form textarea');
 const LOCAL_STORAGE_KEY = 'feedback-form-state';
 
-const storedObj = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? {};
-emailInput.value = storedObj['email'] ?? '';
-messageArea.value = storedObj['message'] ?? '';
+document.addEventListener("DOMContentLoaded", (event) => {
+  const { email, message } = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? {};
+  emailInput.value = email ?? '';
+  messageArea.value = message ?? '';
+});
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-  console.log(localStorage.getItem(LOCAL_STORAGE_KEY));
+  const item = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+  
+  if (item.email.length === 0 || item.message.length === 0) {
+    return
+  }
+
+  console.log(item);
   localStorage.removeItem(LOCAL_STORAGE_KEY);
   form.reset();
 });

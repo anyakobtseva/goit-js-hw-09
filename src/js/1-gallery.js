@@ -1,4 +1,4 @@
-import Simplelightbox from 'simplelightbox'
+import SimpleLightbox from 'simplelightbox'
 import "simplelightbox/dist/simple-lightbox.min.css";
 import rarrow from '../../assets/rarrow.svg';
 import larrow from '../../assets/larrow.svg';
@@ -90,7 +90,7 @@ function createGalleryItem({ preview, description, original }) {
 
 gallery.append(...images.map(image => createGalleryItem(image)));
 
-new Simplelightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   overlayOpacity: 1,
   heightRatio: 0.9,
